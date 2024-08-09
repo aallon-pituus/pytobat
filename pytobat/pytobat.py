@@ -62,7 +62,7 @@ while True:
 ''')
     print("\n\n\nWelcome to the PyToBat tool!")
 
-    text_to_echo = input('View help (h), read licenses (l) or create (c) a batch file: ')
+    text_to_echo = input('View help (h), read license and credits (l) or create a batch file (c): ')
     if text_to_echo == "h":
         os.system("cls")
         print('''                                                                                                                         
@@ -152,6 +152,26 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+                                                                                                                                                            
+88888888ba           888888888888          88888888ba                             ,ad8888ba,                                    88  88                      
+88      "8b               88               88      "8b                ,d         d8"'    `"8b                                   88  ""    ,d                
+88      ,8P               88               88      ,8P                88        d8'                                             88        88                
+88aaaaaa8P'  8b       d8  88   ,adPPYba,   88aaaaaa8P'  ,adPPYYba,  MM88MMM     88             8b,dPPYba,   ,adPPYba,   ,adPPYb,88  88  MM88MMM  ,adPPYba,  
+88""""""'    `8b     d8'  88  a8"     "8a  88""""""8b,  ""     `Y8    88        88             88P'   "Y8  a8P_____88  a8"    `Y88  88    88     I8[    ""  
+88            `8b   d8'   88  8b       d8  88      `8b  ,adPPPPP88    88        Y8,            88          8PP"""""""  8b       88  88    88      `"Y8ba,   
+88             `8b,d8'    88  "8a,   ,a8"  88      a8P  88,    ,88    88,        Y8a.    .a8P  88          "8b,   ,aa  "8a,   ,d88  88    88,    aa    ]8I  
+88               Y88'     88   `"YbbdP"'   88888888P"   `"8bbdP"Y8    "Y888       `"Y8888Y"'   88           `"Ybbd8"'   `"8bbdP"Y8  88    "Y888  `"YbbdP"'  
+                 d8'                                                                                                                                        
+                d8'                                                                                                                                         
+
+
+Main Programmer: aallon-pituus (Github)
+
+
+
+(this is a long page, if all content is not visible, scroll upwards)
 ''')
         ready_to_move_on = input("Press enter to continue. ")
     elif text_to_echo == "c":
