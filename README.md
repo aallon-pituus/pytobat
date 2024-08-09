@@ -1,21 +1,9 @@
-# pytobat
+# PyToBat
 A Python program for creating .bat files
-# help file
-88888888ba           888888888888          88888888ba                           88        88              88               
-88      "8b               88               88      "8b                ,d        88        88              88               
-88      ,8P               88               88      ,8P                88        88        88              88               
-88aaaaaa8P'  8b       d8  88   ,adPPYba,   88aaaaaa8P'  ,adPPYYba,  MM88MMM     88aaaaaaaa88   ,adPPYba,  88  8b,dPPYba,   
-88""""""'    `8b     d8'  88  a8"     "8a  88""""""8b,  ""     `Y8    88        88""""""""88  a8P_____88  88  88P'    "8a  
-88            `8b   d8'   88  8b       d8  88      `8b  ,adPPPPP88    88        88        88  8PP"""""""  88  88       d8  
-88             `8b,d8'    88  "8a,   ,a8"  88      a8P  88,    ,88    88,       88        88  "8b,   ,aa  88  88b,   ,a8"  
-88               Y88'     88   `"YbbdP"'   88888888P"   `"8bbdP"Y8    "Y888     88        88   `"Ybbd8"'  88  88`YbbdP"'   
-                 d8'                                                                                          88           
-                d8'                                                                                           88           
-
- __                                             
-|__) _ _ . _  _ . _  _    _ _  _  _  _  _  _| _ 
-|__)(-(_)|| )| )|| )(_)  (_(_)||||||(_|| )(_|_) 
-      _/            _/                             
+Remember to read the license
+# Help File
+                                
+BEGINNING COMMANDS                          
               
 H (help) - H is a command for accessing the help page (the one you are currently at)
 L (licenses) - L is a command for reading the license of this program            
@@ -23,10 +11,7 @@ C (create) - C is a command for starting the process of creating a .bat file thr
 
 These commands can be executed at the "View help (h), read licenses (l) or create (c) a batch file:" prompt at the beginning
               
- __                                          
-|_.| _   _ _ _ _ |_. _  _    _  _ _  _ _ _ _ 
-| ||(-  (_| (-(_||_|(_)| )  |_)| (_)(_(-_)_) 
-                            |                
+FILE CREATION PROCESS         
 
 1. Entering the name of the file you wish to create
 Enter the name of the file you wish to create to the "Enter the name of the file you wish to create:" prompt
@@ -40,10 +25,7 @@ When ready, write "STOPWRITE" and press enter
 5. Finding the file
 After "STOPWRITE" the file should be in the folder you specified
 
- __          
-|_  _ . _    
-|__| )|(_)\/ 
-      /   / 
+ENJOY
 
 Thank you for using this progam
 -aallon_pituus
