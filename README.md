@@ -6,11 +6,11 @@ BEGINNING COMMANDS
               
 H (help) - H is a command for accessing the help page
 
-L (licenses) - L is a command for reading the license of this program    
+L (licenses) - L is a command for reading the license and credits of this program    
 
 C (create) - C is a command for starting the process of creating a .bat file through this program
 
-These commands can be executed at the "View help (h), read licenses (l) or create (c) a batch file:" prompt at the beginning
+These commands can be executed at the "View help (h), read license and credits (l) or create (c) a batch file:" prompt at the beginning
               
 FILE CREATION PROCESS             
 
