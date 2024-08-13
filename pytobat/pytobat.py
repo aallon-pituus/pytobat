@@ -1,5 +1,8 @@
+import sys
 import os
 import subprocess
+
+loopVar = True
 
 #        Copyright 2024 aallon-pituus (Github)
 #
@@ -44,9 +47,10 @@ def create_batch_file(output_folder, option, lines=None, open_after_creation=Fal
                 batch_file.write(f'{line}\n')
 
     print(f'Batch file "{batch_file_name}" has been created in "{output_folder}".')
+    input("Press enter to continue")
 
 
-while True:
+while loopVar == True:
     os.system("cls")
     print('''                                                                             
 88888888ba           888888888888          88888888ba                        
@@ -62,7 +66,7 @@ while True:
 ''')
     print("\n\n\nWelcome to the PyToBat tool!")
 
-    text_to_echo = input('View help (h), read license and credits (l) or create a batch file (c): ')
+    text_to_echo = input('View help (h), read license and credits (l), create a batch file (c) or exit (e): ')
     if text_to_echo == "h":
         os.system("cls")
         print('''                                                                                                                         
@@ -176,6 +180,9 @@ YHGLeader (Programmer) (Github)
 (this is a long page, if all content is not visible, scroll upwards)
 ''')
         ready_to_move_on = input("Press enter to continue. ")
+    elif text_to_echo == "e":
+        loopVar = False
+        sys.exit()
     elif text_to_echo == "c":
         file_name_choice = input("Enter the name of the file you wish to create: ")
         output_folder = input("Enter the full path of the output folder where the batch file should be saved: ")
