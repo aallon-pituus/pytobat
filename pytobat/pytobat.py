@@ -167,9 +167,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
                 d8'                                                                                                                                         
 
 
-Main Programmer: aallon-pituus (Github)
+aallon-pituus (Main Programmer & Creator) (Github)
 
-Voluntary programmer: yhg_leader (Github)
+YHGLeader (Programmer) (Github)
 
 
 
