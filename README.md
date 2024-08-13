@@ -10,6 +10,8 @@ L (licenses) - L is a command for reading the license and credits of this progra
 
 C (create) - C is a command for starting the process of creating a .bat file through this program
 
+E (exit) - E is a command for ending the program
+
 These commands can be executed at the "View help (h), read license and credits (l) or create (c) a batch file:" prompt at the beginning
               
 FILE CREATION PROCESS             
