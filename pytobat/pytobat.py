@@ -169,6 +169,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 Main Programmer: aallon-pituus (Github)
 
+Voluntary programmer: yhg_leader (Github)
+
 
 
 (this is a long page, if all content is not visible, scroll upwards)
