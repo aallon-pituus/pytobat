@@ -180,7 +180,14 @@ Main Programmer: aallon-pituus (Github)
         print("\nSelect an option for the batch file:")
         print("1. Open the file after done")
         print("2. Do not open file after done")
-        choice = int(input("Enter the number of your choice (1 or 2): "))
+        choice = input("Enter the number of your choice (1 or 2): ")
+
+        if not choice.isdigit() or int(choice) not in [1, 2, 3]:
+            print("\nInvalid choice. Please select a valid option.\n\nPress enter to continue")
+            input()
+        else:
+            choice = int(choice)
+            
         if choice == 1:
             print("\nEnter the lines of code you want to include in the batch file. (press enter for a new line)")
             print("Type 'STOPWRITE' on a new line when you are finished.")
@@ -201,3 +208,4 @@ Main Programmer: aallon-pituus (Github)
                     break
                 lines.append(line)
             create_batch_file(output_folder, choice, lines=lines)
+        
