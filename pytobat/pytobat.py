@@ -46,8 +46,8 @@ def create_batch_file(output_folder, option, lines=None, open_after_creation=Fal
             for line in lines:
                 batch_file.write(f'{line}\n')
 
-    print(f'Batch file "{batch_file_name}" has been created in "{output_folder}".')
-    input("Press enter to continue")
+    print(f'\nBatch file "{batch_file_name}" has been created in "{output_folder}".')
+    input("\nPress enter to continue. ")
 
 
 while loopVar == True:
@@ -85,10 +85,12 @@ while loopVar == True:
 |__) _ _ . _  _ . _  _    _ _  _  _  _  _  _| _ 
 |__)(-(_)|| )| )|| )(_)  (_(_)||||||(_|| )(_|_) 
       _/            _/                             
-              
-H (help) - H is a command for accessing the help page (the one you are currently at)
-L (licenses) - L is a command for reading the license of this program            
-C (create) - C is a command for starting the process of creating a .bat file through this program
+
+Remember to write the commands in lowercase
+H (help) - "h" is a command for accessing the help page (the one you are currently at)
+L (licenses) - "l" is a command for reading the license of this program            
+C (create) - "c" is a command for starting the process of creating a .bat file through this program
+E (exit) - "e" is a command for ending the program
 
 These commands can be executed at the "View help (h), read licenses (l) or create (c) a batch file:" prompt at the beginning
               
