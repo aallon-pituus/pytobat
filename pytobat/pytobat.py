@@ -208,4 +208,3 @@ Main Programmer: aallon-pituus (Github)
                     break
                 lines.append(line)
             create_batch_file(output_folder, choice, lines=lines)
-        
