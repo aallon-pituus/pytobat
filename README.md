@@ -4,13 +4,13 @@ A Python program for creating .bat files. Remember to read the license.
 
 BEGINNING COMMANDS 
               
-H (help) - H is a command for accessing the help page
+H (help) - "h" is a command for accessing the help page
 
-L (licenses) - L is a command for reading the license and credits of this program    
+L (licenses) - "l" is a command for reading the license and credits of this program    
 
-C (create) - C is a command for starting the process of creating a .bat file through this program
+C (create) - "c" is a command for starting the process of creating a .bat file through this program
 
-E (exit) - E is a command for ending the program
+E (exit) - "e" is a command for ending the program
 
 These commands can be executed at the "View help (h), read license and credits (l) or create (c) a batch file:" prompt at the beginning
               
