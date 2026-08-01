@@ -1,8 +1,6 @@
 import os
 import platform
 import subprocess
-import tkinter as tk
-from tkinter import filedialog, messagebox, scrolledtext
 
 # ----------------------------------------------------------------------
 # Core Utility Functions
@@ -100,7 +98,7 @@ How to create a file:
             print("""
 --- LICENSE & CREDITS ---
 MIT LICENSE
-Copyright (c) 2026 aallon-pituus
+Copyright (c) 2024 aallon-pituus
 
 Main Programmer & Creator: aallon-pituus
 Programmer: YHGLeader
@@ -140,8 +138,8 @@ class PyToBatGUI:
     def __init__(self, root_window):
         self.root = root_window
         self.root.title("PyToBat Studio")
-        self.root.geometry("640x750")
-        self.root.minsize(500, 600)
+        self.root.geometry("640x880")
+        self.root.minsize(640, 880)
 
         self._init_styles()
         self._build_ui()
@@ -290,6 +288,12 @@ License: MIT
 # ----------------------------------------------------------------------
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = PyToBatGUI(root)
-    root.mainloop()
+    try:
+        from tkinter import filedialog, messagebox, scrolledtext
+        import tkinter as tk
+        root = tk.Tk()
+        app = PyToBatGUI(root)
+        root.mainloop()
+    except Exception as e:
+        print(f"GUI unavailable ({e}). Launching CLI mode...\n")
+        legacy_program()
