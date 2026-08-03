@@ -1,17 +1,15 @@
-import os
-import platform
-import subprocess
+import os, platform, subprocess
 
-# ----------------------------------------------------------------------
-# Core Utility Functions
-# ----------------------------------------------------------------------
+############################
+## Core Utility Functions ##
+############################
 
 def clear_screen():
-    """Cross-platform terminal screen clear."""
+    # Cross-platform terminal screen clear.
     os.system("cls" if platform.system() == "Windows" else "clear")
 
 def create_batch_file(output_folder, file_name, lines=None, open_after_creation=False):
-    """Generates the .bat file and handles file system execution."""
+    # Generates the .bat file and handles file system execution.
     if lines is None:
         lines = []
 
@@ -46,20 +44,55 @@ def create_batch_file(output_folder, file_name, lines=None, open_after_creation=
         messagebox.showerror("Error", f"Failed to write file: {e}")
         return False
 
+def legay_create_batch_file(output_folder, file_name, lines=None, open_after_creation=False):
+    # Generates the .bat file and handles file system execution.
+    if lines is None:
+        lines = []
 
-# ----------------------------------------------------------------------
-# Legacy CLI Application
-# ----------------------------------------------------------------------
+    if not output_folder:
+        print("\n[Error] Output folder path cannot be empty.")
+        return False
 
-ASCII_TITLE = r"""
+    if not file_name:
+        print("\n[Error] File name cannot be empty.")
+        return False
+
+    if not file_name.lower().endswith(".bat"):
+        file_name += ".bat"
+
+    try:
+        os.makedirs(output_folder, exist_ok=True)
+        batch_file_path = os.path.join(output_folder, file_name)
+
+        with open(batch_file_path, "w", encoding="utf-8") as batch_file:
+            for line in lines:
+                batch_file.write(f"{line}\n")
+
+        if open_after_creation:
+            if platform.system() == "Windows":
+                subprocess.Popen(["start", batch_file_path], shell=True)
+            else:
+                print("\n[Platform Warning] Auto-run is only supported natively on Windows.")
+
+        print(f"[Success] Batch file {file_name} created in: {output_folder}")
+        return True
+    except Exception as e:
+        print(f"\n[Error] Failed to write file: {e}")
+        return False
+
+############################
+## Legacy CLI Application ##
+############################
+
+ASCII_TITLE = """
 88888888ba           888888888888          88888888ba                        
-88      "8b               88               88      "8b                ,d     
+88      \"8b               88               88      \"8b                ,d     
 88      ,8P               88               88      ,8P                88     
 88aaaaaa8P'  8b       d8  88   ,adPPYba,   88aaaaaa8P'  ,adPPYYba,  MM88MMM  
-88""""""'    `8b     d8'  88  a8"     "8a  88""""""8b,  ""     `Y8    88     
+88\"\"\"\"\"\"'    `8b     d8'  88  a8\"     \"8a  88\"\"\"\"\"\"8b,  \"\"     `Y8    88     
 88            `8b   d8'   88  8b       d8  88      `8b  ,adPPPPP88    88     
-88             `8b,d8'    88  "8a,   ,a8"  88      a8P  88,    ,88    88,    
-88               Y88'     88   `"YbbdP"'   88888888P"   `"8bbdP"Y8    "Y888  
+88             `8b,d8'    88  \"8a,   ,a8\"  88      a8P  88,    ,88    88,    
+88               Y88'     88   `\"YbbdP\"'   88888888P\"   `\"8bbdP\"Y8    \"Y888  
                  d8'                                                         
                 d8'                                                         
 """
@@ -78,6 +111,7 @@ def legacy_program():
             print(ASCII_TITLE)
             print("""
 --- HELP PAGE ---
+
 Commands:
   h - Access help page
   l - View licenses and credits
@@ -97,8 +131,22 @@ How to create a file:
             print(ASCII_TITLE)
             print("""
 --- LICENSE & CREDITS ---
+
 MIT LICENSE
-Copyright (c) 2024 aallon-pituus
+
+Copyright (c) 2026 aallon-pituus
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Main Programmer & Creator: aallon-pituus
 Programmer: YHGLeader
@@ -123,16 +171,16 @@ Programmer: YHGLeader
                     break
                 lines.append(line)
 
-            create_batch_file(output_folder, file_name, lines, open_after_creation=(mode == "1"))
+            legay_create_batch_file(output_folder, file_name, lines, open_after_creation=(mode == "1"))
             input("\nPress ENTER to continue...")
 
         elif choice == "e":
             loop_var = False
 
 
-# ----------------------------------------------------------------------
-# Modernized Tkinter Application Class
-# ----------------------------------------------------------------------
+##########################################
+## Modernized Tkinter Application Class ##
+##########################################
 
 class PyToBatGUI:
     def __init__(self, root_window):
@@ -235,12 +283,10 @@ class PyToBatGUI:
         output_folder = self.output_folder_entry.get().strip()
         lines = self.editor_text.get("1.0", tk.END).rstrip().split("\n")
 
-        # Independent Checkbox Logic: Add prefix if enabled
         if self.use_template_var.get():
             additional_cmd = self.cmd_command_entry.get().strip()
             lines.insert(0, f"start cmd.exe /k {additional_cmd}".strip())
 
-        # Independent Radio Logic: Run post-creation action
         open_after = (self.mode_var.get() == 1)
 
         create_batch_file(output_folder, file_name, lines=lines, open_after_creation=open_after)
@@ -272,7 +318,8 @@ class PyToBatGUI:
 4. Script Syntax:
    - Enter standard Batch / CMD commands line-by-line into the workspace editor.
 
---------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
 Credits:
 - aallon-pituus (Main Programmer & Owner)
 - YHGLeader (Programmer)
@@ -283,9 +330,9 @@ License: MIT
         text_area.config(state=tk.DISABLED)
 
 
-# ----------------------------------------------------------------------
-# Application Entry Point
-# ----------------------------------------------------------------------
+############################
+# Application Entry Point ##
+############################
 
 if __name__ == "__main__":
     try:
