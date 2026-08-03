@@ -44,7 +44,7 @@ def create_batch_file(output_folder, file_name, lines=None, open_after_creation=
         messagebox.showerror("Error", f"Failed to write file: {e}")
         return False
 
-def legay_create_batch_file(output_folder, file_name, lines=None, open_after_creation=False):
+def legacy_create_batch_file(output_folder, file_name, lines=None, open_after_creation=False):
     # Generates the .bat file and handles file system execution.
     if lines is None:
         lines = []
@@ -171,7 +171,7 @@ Programmer: YHGLeader
                     break
                 lines.append(line)
 
-            legay_create_batch_file(output_folder, file_name, lines, open_after_creation=(mode == "1"))
+            legacy_create_batch_file(output_folder, file_name, lines, open_after_creation=(mode == "1"))
             input("\nPress ENTER to continue...")
 
         elif choice == "e":
