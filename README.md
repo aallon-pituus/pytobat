@@ -30,5 +30,6 @@ A Python program for creating .bat files. Remember to read the license.
 5. Create the File:
    - Click the button to generate the batch file to generate it with the provided details.
 
-# Contributing
-Please agree to the ICLA (in the CLA.md file) when you contribute.
+# Contributors
+- aallon-pituus
+- YHGLeader
