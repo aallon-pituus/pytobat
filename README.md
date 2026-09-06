@@ -31,5 +31,5 @@ A Python program for creating .bat files. Remember to read the license.
    - Click the button to generate the batch file to generate it with the provided details.
 
 # Contributors
-- aallon-pituus
+- aallonpituus
 - YHGLeader
